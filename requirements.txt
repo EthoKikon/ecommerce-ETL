@@ -1,0 +1,13 @@
+requests
+beautifulsoup4
+pandas
+sqlalchemy
+psycopg2-binary
+pyarrow
+pandera
+python-dotenv
+prefect
+pytest
+black
+flake8
+isort
