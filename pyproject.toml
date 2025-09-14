@@ -1,0 +1,33 @@
+# pyproject.toml
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+# If you prefer Black to not change string quotes, keep this false (default)
+skip-string-normalization = false
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+# Treat src/ package as first-party so imports are ordered correctly
+known_first_party = ["src"]
+
+# Common third-party libs used (helps isort grouping)
+known_third_party = ["pandas", "numpy", "requests", "sqlalchemy", "bs4", "pandera", "prefect", "pytest"]
+multi_line_output = 3
+include_trailing_comma = true
+combine_as_imports = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+# Exclude typical folders
+exclude = [".git", "__pycache__", ".venv", "build", "dist", "docs", "docker", "outputs", "data"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]

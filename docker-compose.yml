@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: etl_user
+      POSTGRES_PASSWORD: etl_pass
+      POSTGRES_DB: etl_demo
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - db
+    # Development convenience: mount source so you can edit without rebuilding
+    volumes:
+      - ./:/app
+
+    command:
+      [
+        "sh",
+        "-c",
+        "python scripts/wait_for_db.py && python -m src.cli --pages 1",
+      ]
+volumes:
+  db_data:

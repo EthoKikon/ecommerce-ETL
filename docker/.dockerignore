@@ -1,0 +1,24 @@
+# Python / general
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+.venv/
+venv/
+
+# Git
+.git
+.gitignore
+
+# Local env / secrets
+.env
+.env.*
+
+# Data & outputs (don't bake large files into the image)
+data/
+outputs/
+
+# Editor configs
+.vscode/
+.idea/
