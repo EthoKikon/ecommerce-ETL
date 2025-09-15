@@ -23,7 +23,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Install package (editable)
+        run: python -m pip install -e .
       - name: Run tests
         env:
           DATABASE_URL: postgresql://etl_user:etl_pass@localhost:5432/etl_demo
-        run: pytest -q
+        run: python -m pytest -q
