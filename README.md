@@ -12,22 +12,22 @@
 
 ### ETL flow run (Prefect)
 
-![ETL Flow run](docs/images/flow_run.png)
+![ETL Flow run](docs/images/flow-run.png)
 _Caption:_ Prefect flow execution — extract → transform → load complete (shows task start/finish).
 
 ### CLI quick run
 
-![CLI run](docs/images/cli_run.png)
+![CLI run](docs/images/cli-run.png)
 _Caption:_ Running `python -m src.cli --pages 1` to execute the pipeline end-to-end.
 
 ### DB verification (rows loaded)
 
-![DB count](docs/images/db_count.png)
+![DB count](docs/images/db-count.png)
 _Caption:_ `SELECT COUNT(*) FROM books;` verifies number of rows loaded into Postgres.
 
 ### Sample cleaned data
 
-![Sample rows](docs/images/sample_rows.png)
+![Sample rows](docs/images/sample-rows.png)
 _Caption:_ First 5 rows from `outputs/books_clean.parquet` / `books` table.
 
 ### Quick visualization
@@ -35,7 +35,9 @@ _Caption:_ First 5 rows from `outputs/books_clean.parquet` / `books` table.
 ![Price histogram](docs/images/price_hist.png)
 _Caption:_ Example visualization produced in `notebooks/dev_playground.ipynb`.
 
-> Optionally add a short demo GIF (small file) at `docs/images/demo.gif`.
+### Quick visualization
+
+![Demo.gif](docs/images/demo.gif)
 
 ---
 
