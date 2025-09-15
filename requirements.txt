@@ -87,7 +87,7 @@ python-dotenv==1.1.1
 python-slugify==8.0.4
 python-socks==2.7.2
 pytz==2025.2
-pywin32==311
+pywin32==311; sys_platform == "win32"
 PyYAML==6.0.2
 readchar==4.2.1
 referencing==0.36.2
