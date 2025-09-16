@@ -8,8 +8,6 @@
 
 ## Demo (screenshots)
 
-> Place screenshots in `docs/images/` with the filenames used below.
-
 ### ETL flow run (Prefect)
 
 ![ETL Flow run](docs/images/flow-run.png)
@@ -35,9 +33,10 @@ _Caption:_ First 5 rows from `outputs/books_clean.parquet` / `books` table.
 ![Price histogram](docs/images/price_hist.png)
 _Caption:_ Example visualization produced in `notebooks/dev_playground.ipynb`.
 
-### Quick visualization
+### Perfect flow Demonstration
 
 ![Demo.gif](docs/images/demo.gif)
+_Caption:_ Prefect flow demonstration — extract → transform → load complete.
 
 ---
 
@@ -89,8 +88,17 @@ _Caption:_ Example visualization produced in `notebooks/dev_playground.ipynb`.
 ## Project Structure
 
 ```bash
-cp .env.example .env
-# Edit .env if you want to change DB creds or output dir
+ecommerce-etl/
+├─ src/                 # ETL code: extract, transform, load, flow, cli
+├─ notebooks/
+├─ tests/               # unit tests (pytest)
+├─ docker/              # Dockerfile
+├─ docker-compose.yml
+├─ pyproject.toml       # for linters/formatting
+├─ docs/                # notebook exports, screenshots, executive summary
+|  └─ images/           # flow_run.png, db_count.png, sample_rows.png, price_hist.png
+└─ README.md
+
 ```
 
 ## Running tests & CI
